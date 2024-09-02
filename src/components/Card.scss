@@ -1,0 +1,228 @@
+.card {
+    width: 220px;
+    margin: .5rem;
+    height: 230px;
+    //background-color: rgb(88, 11, 82);
+    background: linear-gradient(0deg,#195173 10%, #22789F 79%);    overflow: hidden;
+    transition: background-color 1.5s ease-in-out;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 30px 15px 17px -5px rgba(0,0,0,0.75); // css generator
+    &__image-container {
+        height: 200px;
+        overflow: hidden;
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        // z-index: 1;
+    }
+    &__image-container{
+        position: relative;
+        transition: 
+        filter 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        translate 1.5s ease-in-out;
+        object-fit: cover;
+        filter: blur(.5px) brightness(80%) contrast(80%);
+        // z-index: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 200px, 0 190px);
+    }
+    &__content{
+        position: absolute;
+        width: 220px;
+        max-width: 220px;
+        height: 14rem;
+        color: #BBBBBB;
+        background: linear-gradient(0deg,#195173 10%, #22789F 79%);
+        transition: transform 1.5s ease-in-out,
+        color 1.5s ease-in-out;
+    }
+    &__image-icon{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__like{
+        scale: .6;
+        height: 3rem;
+        margin-top: .35rem;
+        margin-right: 1rem;
+        text-decoration: none;
+    }
+    &__cart{
+        height: 2.8rem;
+        scale: .9;
+            
+        margin-top: .3rem;
+        margin-left: 1rem;
+        margin-right: 5rem;
+        text-decoration: none;
+        top: 1rem;
+    }
+    &__precio{
+        color: #9DEE11;
+        text-align: center;
+        font-size: 1.2rem;
+        font-style: bold;
+        &__p{
+            color: #9DEE11;
+            font-size: 1.2rem;
+            margin-top: .5rem;
+        }
+    }
+    &__heading{
+        display: flex;
+      
+    }
+    &__dots{
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        top: 4px;
+        right: 1rem;
+        scale: 1.2;
+    }
+    //MOBILE CONFIGURATION
+    @media(max-width:576px){
+
+        &__content{
+            opacity: 0%;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+            display: none;
+            height: 220px;
+        }
+        .card:hover &__content{
+            opacity: 100%;
+            transition: opacity 1.5s ease-in-out;
+            display: block;
+        }
+        .card:hover &__precio{
+            display:none
+        }
+        &__image-container{
+        transition:
+        filter 1.5s ease-in-out, 
+        scale 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        translate 1.5s ease-in-out,
+        clip-path 1.5s ease-in-out;
+        scale: 1.01;
+        }
+    &__image-container:hover{
+        
+        // transition:
+        // filter 1.5s ease-in-out, 
+        // scale 1.5s ease-in-out,
+        // transform 1.5s ease-in-out,
+        // translate 1.5s ease-in-out,
+        // clip-path 1.5s ease-in-out;
+        filter: blur(0px) brightness(100%) contrast(100%);
+
+        // z-index: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
+    }
+    &__cart, &__like{
+        transition:
+        scale 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        translate 1.5s ease-in-out;
+        filter: grayscale(0%), brightness(100%), contrast(100%);
+    }
+    &__a{
+        display: inline-block;
+        width: 2rem;
+        margin-left: 1rem;
+    }
+    &:hover &__content{
+        color: white;
+        transform: translateY(10%) scale(1.1);
+    }
+    &:hover &__image-container,
+    &:hover &__content:hover &__image-container {
+        cursor: pointer;
+      filter: blur(0px) brightness(100%) contrast(100%);
+      transform: scale(1.1);
+    }
+    &:hover &__like, &:hover &__cart{
+        transform: translateY(15%) scale(1);
+        background-color: none;
+    }
+
+
+    }
+    // DESKTOP CONFIGURATION
+    @media(min-width:768px){
+
+        &__content{
+            opacity: 0%;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+            display: none;
+        }
+        .card:hover &__content{
+            opacity: 100%;
+            transition: opacity 1.5s ease-in-out;
+            display: block;
+        }
+        .card:hover &__precio{
+            display:none
+        }
+        &__image-container{
+        transition:
+        filter 1.5s ease-in-out, 
+        scale 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        translate 1.5s ease-in-out,
+        clip-path 1.5s ease-in-out;
+        scale: 1.01;
+        }
+    &__image-container:hover{
+        
+        // transition:
+        // filter 1.5s ease-in-out, 
+        // scale 1.5s ease-in-out,
+        // transform 1.5s ease-in-out,
+        // translate 1.5s ease-in-out,
+        // clip-path 1.5s ease-in-out;
+        filter: blur(0px) brightness(100%) contrast(100%);
+
+        // z-index: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 200px, 0 200px);
+    }
+    &__cart, &__like{
+        transition:
+        scale 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        translate 1.5s ease-in-out;
+        filter: grayscale(0%), brightness(100%), contrast(100%);
+    }
+    &__a{
+        display: inline-block;
+        width: 2rem;
+        margin-left: 1rem;
+    }
+    &:hover &__content{
+        color: white;
+        transform: translateY(10%) scale(1.1);
+    }
+    &:hover &__image-container,
+    &:hover &__content:hover &__image-container {
+        cursor: pointer;
+      filter: blur(0px) brightness(100%) contrast(100%);
+      transform: scale(1.1);
+    }
+    &:hover &__like, &:hover &__cart{
+        transform: translateY(15%) scale(1);
+        background-color: none;
+    }
+
+
+}
+}
+.section-cards{
+    height: 100%;
+    &__header{
+        padding:1.5rem;
+    }
+}
