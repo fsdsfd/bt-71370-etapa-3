@@ -9,14 +9,14 @@ td{
     flex-direction: row;
 }
 @media (max-width:578px) {
+    .botones-container-alta{
+        display: flex;
+        flex-direction: column;
+    }
     .producto-hidden{
         display: none;
     }
-    .producto-acciones{
-        position: relative;
 
-        background-color: red;
-    }
 }
 .boton-alta{
     cursor: pointer;
@@ -31,7 +31,6 @@ td{
 
     &__eliminar{
         color: #F1F5FB;
-     
         background-color: #3483FA;
         box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.47);
     }

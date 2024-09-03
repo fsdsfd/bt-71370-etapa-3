@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import './TablaFila.scss'
 const TablaFila = ({product}) => {
   const { setProductoAEditar, eliminarProducto } = useContext(ProductosContext);
-  console.log(product)
   const handleEditar = (prod) => {
     setProductoAEditar(prod);
   };
@@ -24,7 +23,7 @@ const TablaFila = ({product}) => {
     </td>
     <td className="producto-hidden">{product.envio ? 'SI' : 'NO'}</td>
 
-    <td className="botones-container-alta producto-acciones" colSpan={1}>
+    <td className="botones-container-alta " colSpan={1}>
       <Link className="boton-alta boton-alta__ver" to={`/detalle-producto/${product.id}`}>Ver</Link>
       <button className="boton-alta boton-alta__editar" onClick={() => handleEditar(product)}>Editar</button>
       <button className="boton-alta boton-alta__eliminar" onClick={handleEliminar}>Eliminar</button>
