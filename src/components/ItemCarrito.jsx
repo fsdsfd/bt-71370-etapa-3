@@ -16,10 +16,10 @@ const ItemCarrito = ({producto}) => {
             <img src={producto.foto} alt={producto.nombre} width="50px" />
             {/* No poner el width acá  */}
         </td>
-        <td>{producto.nombre}</td>
-        <td>{producto.cantidad}</td>
-        <td>{producto.precio}</td>
-        <td className='boton-container'>
+        <td className='td-producto'>{producto.nombre}</td>
+        <td className='td-producto'>{producto.cantidad}</td>
+        <td className='td-producto'>{producto.precio}</td>
+        <td className='boton-container td-producto'>
             <button onClick={()=>handleEliminar(producto.id)} className='boton-carrito boton-carrito__eliminar'>
                 Eliminar
             </button>

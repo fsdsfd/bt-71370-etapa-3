@@ -21,11 +21,11 @@ const ListadoCarrito = () => {
     <table className='tabla-valores-carrito'>
         <thead>
         <tr>
-        <th>Foto</th>
-        <th>Nombre</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-        <th>Acciones</th>
+        <th className='th-producto'>Foto</th>
+        <th className='th-producto'>Nombre</th>
+        <th className='th-producto'>Cantidad</th>
+        <th className='th-producto'>Precio</th>
+        <th className='th-producto'>Acciones</th>
 
     </tr>
         </thead>

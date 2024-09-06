@@ -12,6 +12,11 @@ th, td{
     padding: 8px;
     text-align: left;
 }
+@media (max-width:576px) {
+    .th-producto{
+        width: 1px;
+    }
+}
 th{
     background-color: #f2f2;
 }

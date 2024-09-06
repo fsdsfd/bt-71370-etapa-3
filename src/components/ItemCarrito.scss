@@ -2,6 +2,15 @@
     display: flex;
     justify-content: space-around;
 }
+@media (max-width:576px) {
+    .boton-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .td-producto{
+        scale: 0.9;
+    }
+}
 .boton-carrito{
     cursor: pointer;
     width: 6rem;

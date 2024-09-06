@@ -5,7 +5,7 @@ import './Tabla.scss'
 const Tabla = () => {
   const {productos} = useContext(ProductosContext);
   return (
-    <>
+    <div className="productos-body">
       <h2>Tabla de productos</h2>
       <table className="tabla-alta">
         <thead>
@@ -20,7 +20,7 @@ const Tabla = () => {
             
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tabla-fila-productos">
           {/* Para renderizar los productos se usa map, no se puede con forEach */}
           {
             // Esto es básicamente products ? 'products.map()...' : ''. Un if básicamente, rendering condicional, si
@@ -30,7 +30,7 @@ const Tabla = () => {
           }
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

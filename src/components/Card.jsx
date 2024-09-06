@@ -5,7 +5,7 @@ import { useContext, useState } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 const Card = ({producto}) => {
-  const {agregarProductoAlCarritoContext, obtenerProductoDelCarrito} = useContext(CarritoContext)
+  const {agregarProductoAlCarritoContext} = useContext(CarritoContext)
   const [guardarMeGusta,eliminarDelCarrito, limpiarCarrito,meGustaAlmacenado] = useLocalStorage('MeGusta', [])
   const [valorAlmacenado, setValorAlmacenado] = useState(null)
   const [like, setLike] = useState('/img/svg-icons/me-gusta.svg')

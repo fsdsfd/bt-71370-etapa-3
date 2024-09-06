@@ -43,6 +43,10 @@
             justify-content: center;
             text-decoration: none;
         }
+        &__cart{
+            position: relative;
+            top: 1rem;
+        }
         &__boton{
             cursor: pointer;
             align-self:center;
@@ -108,6 +112,11 @@
             display: flex;
             justify-content: center;
             text-decoration: none;
+        }
+        &__cart{
+            margin-left: 1rem;
+            position: relative;
+            top: 1.5rem;
         }
         &__boton{
             cursor: pointer;

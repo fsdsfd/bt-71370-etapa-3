@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProductosContext from '../contexts/ProductosContext';
-import Inicio from '../pages/Inicio';
-
+import './SearchBar.scss'
 const SearchBar = () => {
   const {productos} = useContext(ProductosContext)
   console.log(productos)
@@ -21,7 +20,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+<div>
 <div className="search-bar">
     <div className="search-bar__logo-container">Logo</div>
     <form action="#" className="search-bar__form-container">
@@ -30,7 +29,7 @@ const SearchBar = () => {
       className="search-bar__form-search" 
       onChange={handleChange} 
       value={query}/>
-      <button type='submit' className="search-bar__form-submit"/>
+       <button type='submit' className="search-bar__form-submit"/>
     </form>
     <div className="search-bar__carrito-container">
     <Link to="/carrito">
@@ -45,7 +44,17 @@ const SearchBar = () => {
       </label>
     </div>
   </div>
- 
+  <div>
+  {
+      filteredData && filteredData.map((producto)=>(
+        <ul className='ul-searchBar' key={producto.id}>
+          <li className='ul-searchBar__li'>{producto.nombre}</li>
+          <Link className='ul-searchBar__boton' to={`/detalle-producto/${producto.id}`}>Ver</Link>
+          </ul>
+      ))
+    }
+  </div>
+
     </div>
     
 

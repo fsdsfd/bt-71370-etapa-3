@@ -1,22 +1,14 @@
+.productos-body{
+    background-color: #151516;
+}
 table.tabla-alta {
     border-collapse: collapse;
     width: 95%;
     margin: 1rem auto;
-
+    color: #ddd;
     th, td {
-        border: 1px solid #ddd;
+        border: 2px solid #151516;
         padding: 8px;
         text-align: left;
-    }
-}
-@media (max-width:578px) {
-    .tr{
-        
-    }
-    .producto-hidden-tabla{
-        display: none;
-    }
-    .producto-acciones{
-      
     }
 }
