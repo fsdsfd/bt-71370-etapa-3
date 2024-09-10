@@ -10,6 +10,11 @@ td{
 
 }
 @media (max-width:578px) {
+    .img-row{
+        width: 4rem;
+        height: 7rem;
+
+    }
     .botones-container-alta{
         display: flex;
         flex-direction: column;

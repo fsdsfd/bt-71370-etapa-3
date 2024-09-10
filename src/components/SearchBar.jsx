@@ -13,7 +13,7 @@ const SearchBar = () => {
     setQuery(value);
 
     const filtered = productos.filter(prod =>
-      prod.nombre.includes(value)
+      prod.nombre.toLowerCase().includes(value.toLowerCase())
     );
     console.log(filtered)
     setFilteredData(filtered);
@@ -22,7 +22,9 @@ const SearchBar = () => {
   return (
 <div>
 <div className="search-bar">
-    <div className="search-bar__logo-container">Logo</div>
+    <div className="search-bar__logo-container">
+    <img src="/img/Qui-videt-logo.png" alt="Qui Videt" className='search-bar__logo' />
+    </div>
     <form action="#" className="search-bar__form-container">
       <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
       <input type="text"

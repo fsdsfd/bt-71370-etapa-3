@@ -6,7 +6,7 @@ const Carrito = () => {
   useTitulo('Carrito')
   return (
     <div className='body-carrito'>
-    <h1>Productos en el carrito:</h1>
+    <h1 className='titulo-carrito'>Productos en el carrito:</h1>
     <hr />
     <ListadoCarrito></ListadoCarrito>
     </div>
