@@ -25,7 +25,7 @@ const Tabla = () => {
           {
             // Esto es básicamente products ? 'products.map()...' : ''. Un if básicamente, rendering condicional, si
             productos && productos.map((product, idx) => (
-                <TablaFila key={idx} product={product} />
+                <TablaFila key={product.id+idx} product={product} />
               ))
           }
         </tbody>

@@ -9,7 +9,6 @@ createRoot(document.getElementById('root')).render(
 
   <CarritoProvider>
     <App />
-
   </CarritoProvider>
   </ProductosProvider>
 

@@ -36,8 +36,6 @@ const Inicio = () => {
           <h1>Lorem ipsum dolor sit amet consectetur.</h1>
           <p>Se encontraron X productos</p>
         </header>
-      
-      
         <div className="cards-container" id="contenedor-cards">
           {
             productos && productos.map((producto)=>(
@@ -50,7 +48,6 @@ const Inicio = () => {
           <TelevisionCarrousel></TelevisionCarrousel>
     </main>
 </>
-
     
   )
 }
