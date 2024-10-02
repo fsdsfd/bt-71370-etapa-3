@@ -6,13 +6,11 @@ const ProductosContext = createContext()
 // Armamos el provider
 const ProductosProvider = ({ children })=>{
     const url = import.meta.env.VITE_BACKEND_PRODUCTOS
-    console.log(url)
     const [productos, setProductos] = useState(null)
     const [productoAEditar, setProductoAEditar] = useState(null)
     useEffect(() => {
         getAllProductos()
     }, [])
-    console.log(helperPeticionesHttp)
     const getAllProductos = async ()=>{
         try {
            const prods = await helperPeticionesHttp(url, {})

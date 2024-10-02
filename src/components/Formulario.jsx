@@ -1,6 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ProductosContext from "../contexts/ProductosContext";
 import "./Formulario.scss";
+import DragAndDrop from "./DragAndDrop";
 const Formulario = () => {
   const {
     agregarProducto,
@@ -8,6 +9,10 @@ const Formulario = () => {
     setProductoAEditar,
     editarProducto
   } = useContext(ProductosContext);
+  const smallRefNombre = useRef(null)
+  const smallRefDescripcion = useRef(null)
+  const smallRefPrecio = useRef(null)
+
   const formInicial = {
     id: null,
     nombre: "",
@@ -29,21 +34,35 @@ const Formulario = () => {
       [name]: type === 'checkbox' ? checked : value
     })
   };
-
+  const validateForm = (valor, small)=>{
+    if (!valor) {
+      small.current.textContent = 'Complete este campo'
+      return small.current.textContent
+    }else{
+      small.current.textContent = ''
+      return small.current.textContent
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       console.log("Enviando información");
-      if (form.id === null) {
-        console.log('creando un producto')
-
-        await agregarProducto(form);
-      } else {
-        console.log('actualizando producto')
-
-       await editarProducto(form);
+      const validateTotal = validateForm(form.nombre, smallRefNombre) === '' && validateForm(form.descripcion, smallRefDescripcion) === ''  && validateForm(form.precio, smallRefPrecio) === ''
+      if (!validateTotal) {
+        throw new Error('No se puede enviar el form por falta de datos')
+      }else{
+        if (form.id === null) {
+          console.log('creando un producto')
+          console.log(form)
+          await agregarProducto(form);
+        } else {
+          console.log('actualizando producto')
+  
+         await editarProducto(form);
+        }
+        handleReset();
       }
-      handleReset();
+
     } catch (error) {
       console.log('handleSubmit', error)
     }
@@ -63,7 +82,7 @@ const Formulario = () => {
       <label className="form-alta__lbl" htmlFor="lbl-nombre">
         Titulo:
       </label>
-      <small data-error="nombre-error" className="form-alta__smalls"></small>
+      <small data-error="nombre-error" className="form-alta__smalls" ref={smallRefNombre}></small>
       <input
         type="text"
         name="nombre"
@@ -78,6 +97,7 @@ const Formulario = () => {
       <small
         data-error="descripcion-error"
         className="form-alta__smalls"
+        ref={smallRefDescripcion}
       ></small>
 
       <input
@@ -91,7 +111,7 @@ const Formulario = () => {
       <label className="form-alta__lbl" htmlFor="lbl-precio">
         Precio:
       </label>
-      <small data-error="precio-error" className="form-alta__smalls"></small>
+      <small data-error="precio-error" className="form-alta__smalls" ref={smallRefPrecio}></small>
 
       <input
         type="number"
@@ -104,11 +124,6 @@ const Formulario = () => {
       <label className="form-alta__lbl" htmlFor="lbl-envio">
         Envio:
       </label>
-      <small
-        data-error="envio-error"
-        className="form-alta__smalls"
-      ></small>
-
       <input
         type="checkbox"
         name="envio"

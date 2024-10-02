@@ -5,7 +5,6 @@ import { helperPeticionesHttp } from "../helpers/helper-peticiones-http";
 const CarritoContext = createContext();
 const CarritoProvider = ({ children }) => {
   const url = import.meta.env.VITE_BACKEND_CARRITOS
-  console.log(url)
   const [guardarEnElCarrito, eliminarDelCarrito, limpiarCarrito, carrito] =
     useLocalStorage("carrito", []);
   const sumaDeProductosDelCarritoContext = () => {

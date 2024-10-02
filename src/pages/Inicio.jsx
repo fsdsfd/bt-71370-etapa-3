@@ -21,7 +21,6 @@ const Inicio = () => {
     } else {
       nuevoGradiante = 'linear-gradient(0deg,#000000 0%, #1B2838 99%)';
     }
-    console.log(nuevoGradiante)
     setBackgroundImage(nuevoGradiante);
   };
   useEffect(() => {

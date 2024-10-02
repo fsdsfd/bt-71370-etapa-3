@@ -4,7 +4,6 @@ import ProductosContext from '../contexts/ProductosContext';
 import './SearchBar.scss'
 const SearchBar = () => {
   const {productos} = useContext(ProductosContext)
-  console.log(productos)
   const [query, setQuery] = useState('');
   const [filteredData, setFilteredData] = useState(productos);
 
