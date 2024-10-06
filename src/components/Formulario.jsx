@@ -58,12 +58,8 @@ const Formulario = () => {
           formularioSuccess('creado')
         } else {
           console.log('actualizando producto')
-          if (form.foto === true) {
             await editarProducto(form);
             formularioSuccess('editado')
-          }else{
-            console.log('No se puede editar la foto')
-          }
         }
         handleReset();
       }
