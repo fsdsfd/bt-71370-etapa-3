@@ -54,7 +54,6 @@ const Formulario = () => {
       }else{
         if (form.id === null) {
           console.log('creando un producto')
-          console.log(form)
           await agregarProducto(form);
           formularioSuccess('creado')
         } else {

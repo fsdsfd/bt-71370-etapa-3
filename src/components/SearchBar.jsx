@@ -46,7 +46,7 @@ const SearchBar = () => {
   </div>
   <div className='div-searchBar'>
   {
-      filteredData  ? filteredData.map((producto)=>(
+      filteredData && filteredData.map((producto)=>(
           <Link className='ul-searchBar__boton' to={`/detalle-producto/${producto.id}`}>
           <ul className='ul-searchBar' key={producto.id}>
           <li className='ul-searchBar__li'>{producto.nombre}</li>
@@ -54,7 +54,7 @@ const SearchBar = () => {
 
           </Link>
       ))
-      : <div></div>
+ 
     }
   </div>
   <header className="section-cards__header">
