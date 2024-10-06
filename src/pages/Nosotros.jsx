@@ -17,7 +17,7 @@ const Nosotros = () => {
         </div>
         <div className="contenedor-nosotros__segundo-parrafo">
           <h2 className="contenedor-nosotros__titulos contenedor-nosotros__titulos__2">¿Cuál es nuestro objetivo?</h2>
-          <img src="/public/img/Bola-de-plasma.jpg" alt="bola de plasma" className="contenedor-nosotros__imagenes  contenedor-nosotros__imagenes__2" />
+          <img src="/img/Bola-de-plasma.jpg" alt="bola de plasma" className="contenedor-nosotros__imagenes  contenedor-nosotros__imagenes__2" />
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, maiores quibusdam? Laborum, qui
             adipisci! Nam optio inventore omnis qui atque amet reprehenderit libero, voluptatem nulla odit, deserunt,
             excepturi debitis. Eius voluptatum placeat, temporibus repudiandae quas enim sed explicabo modi, repellat
@@ -26,7 +26,7 @@ const Nosotros = () => {
         </div>
         <div className="contenedor-nosotros__tercer-parrafo">
           <h2 className="contenedor-nosotros__titulos contenedor-nosotros__titulos__3">Q&A</h2>
-          <img src="/public/img/trabajador-1.png" alt="Trabajador con smoking" className="contenedor-nosotros__imagenes  contenedor-nosotros__imagenes__3" />
+          <img src="/img/trabajador-1.png" alt="Trabajador con smoking" className="contenedor-nosotros__imagenes  contenedor-nosotros__imagenes__3" />
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, modi asperiores dolore impedit, eos
             ducimus autem velit tempora quis expedita aspernatur dolorem unde veniam repellat soluta dolor tempore
             eveniet rem. Impedit nesciunt nulla autem. Enim, dolorem ex, distinctio aperiam, nisi est error iure earum

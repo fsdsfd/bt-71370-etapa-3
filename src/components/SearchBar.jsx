@@ -17,7 +17,6 @@ const SearchBar = () => {
     console.log(filtered)
     setFilteredData(filtered);
   };
-
   return (
 <div>
 <div className="search-bar">
@@ -45,17 +44,22 @@ const SearchBar = () => {
       </label>
     </div>
   </div>
-  <div>
+  <div className='div-searchBar'>
   {
-      filteredData && filteredData.map((producto)=>(
-        <ul className='ul-searchBar' key={producto.id}>
+      filteredData  ? filteredData.map((producto)=>(
+          <Link className='ul-searchBar__boton' to={`/detalle-producto/${producto.id}`}>
+          <ul className='ul-searchBar' key={producto.id}>
           <li className='ul-searchBar__li'>{producto.nombre}</li>
-          <Link className='ul-searchBar__boton' to={`/detalle-producto/${producto.id}`}>Ver</Link>
           </ul>
+
+          </Link>
       ))
+      : <div></div>
     }
   </div>
-
+  <header className="section-cards__header">
+          <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        </header>
     </div>
     
 

@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
 import './Card.scss'
 import ProductosContext from '../contexts/ProductosContext'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 const Card = ({producto}) => {
   const {agregarProductoAlCarritoContext} = useContext(CarritoContext)
-  const [guardarMeGusta,eliminarDelCarrito, limpiarCarrito,meGustaAlmacenado] = useLocalStorage('MeGusta', [])
-  const [valorAlmacenado, setValorAlmacenado] = useState(null)
+  const [guardarMeGusta, eliminarMeGusta] = useLocalStorage('MeGusta', [])
   const [like, setLike] = useState('/img/svg-icons/me-gusta.svg')
   const handleAgregar= (producto)=>{
     agregarProductoAlCarritoContext(producto)
@@ -16,19 +15,12 @@ const Card = ({producto}) => {
     let prevImage = '/img/svg-icons/me-gusta.svg'
     if (prevImage === like) {
       prevImage = '/img/svg-icons/me-gusta-active.svg'
-      producto.meGusta = 1
+      setLike(prevImage)
       guardarMeGusta(producto);
-      if (producto.meGusta === 1) {
-        setLike(prevImage)
-      }
-
     }else{
       prevImage = '/img/svg-icons/me-gusta.svg'
-      producto.meGusta = 0
-      if (producto.meGusta === 0) {
         setLike(prevImage)
-      }
-
+        eliminarMeGusta(producto.id)
     }
   }
   return (

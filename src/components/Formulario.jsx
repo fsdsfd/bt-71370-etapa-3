@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import ProductosContext from "../contexts/ProductosContext";
 import "./Formulario.scss";
-import DragAndDrop from "./DragAndDrop";
+import DragAndDrop from "./DragAndDrop.jsx";
+import { formularioSuccess } from "./FormularioSuccess.service.jsx";
 const Formulario = () => {
   const {
     agregarProducto,
@@ -55,10 +56,15 @@ const Formulario = () => {
           console.log('creando un producto')
           console.log(form)
           await agregarProducto(form);
+          formularioSuccess('creado')
         } else {
           console.log('actualizando producto')
-  
-         await editarProducto(form);
+          if (form.foto === true) {
+            await editarProducto(form);
+            formularioSuccess('editado')
+          }else{
+            console.log('No se puede editar la foto')
+          }
         }
         handleReset();
       }
