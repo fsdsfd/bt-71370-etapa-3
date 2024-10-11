@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import ProductosContext from "../contexts/ProductosContext";
 import "./Formulario.scss";
-import DragAndDrop from "./DragAndDrop.jsx";
 import { formularioSuccess } from "./FormularioSuccess.service.jsx";
 const Formulario = () => {
   const {
